@@ -31,11 +31,12 @@ class Generator:
 
     def _filter_tasks(self, include):
         if include:
-            for index in range(len(self.theoretical_tasks)):
-                if self.theoretical_tasks[index].complexity is None:
+            theory_count = len(self.theoretical_tasks)
+            practice_count = len(self.practical_tasks)
+            for index in range(max(theory_count, practice_count)):
+                if index < theory_count and self.theoretical_tasks[index].complexity is None:
                     self.theoretical_tasks[index].complexity = 0
-            for index in range(len(self.practical_tasks)):
-                if self.practical_tasks[index].complexity is None:
+                if index < practice_count and self.practical_tasks[index].complexity is None:
                     self.practical_tasks[index].complexity = 0
         else:
             self.theoretical_tasks = [task for task in self.theoretical_tasks if task.complexity is not None]
