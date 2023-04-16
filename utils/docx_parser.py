@@ -19,10 +19,15 @@ def extract_practice(file_path: str) -> list[str]:
     doc = docx.Document(file_path)
     task_elements = []
 
-    pattern = re.compile(r'^(Задание|Task)\s*\d*', re.IGNORECASE)
+    pattern = re.compile(r'^Задание\s*\d*', re.IGNORECASE)
+    pattern_english = re.compile(r'^Task\s*\d*', re.IGNORECASE)
 
     for paragraph in doc.paragraphs:
         if pattern.match(paragraph.text):
-            task_elements.append(paragraph.text)
+            text_without_task_word = paragraph.text.split(maxsplit=1)[1]
+            task_elements.append('Практическое задание ' + text_without_task_word)
+        elif pattern_english.match(paragraph.text):
+            text_without_task_word = paragraph.text.split(maxsplit=1)[1]
+            task_elements.append('Practical task ' + text_without_task_word)
 
     return task_elements
