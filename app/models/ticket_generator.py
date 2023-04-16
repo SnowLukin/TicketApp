@@ -23,6 +23,9 @@ class Generator:
     def generate(self) -> list[Ticket]:
         tickets = []
         while len(tickets) < self.num_tickets:  # each time it generates only non overlapping tickets
+            generated_tickets = self._simulated_annealing()
+            if not generated_tickets:
+                return tickets
             tickets += self._simulated_annealing()
         return tickets[:self.num_tickets]
 
