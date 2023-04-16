@@ -7,6 +7,6 @@ from app.viewmodels.ticket_generator_viewmodel import TicketGeneratorViewModel
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     viewmodel = TicketGeneratorViewModel()
-    content_view = TicketGeneratorView(viewmodel)
-    content_view.show()
+    view = TicketGeneratorView(viewmodel)
+    view.show()
     sys.exit(app.exec())
