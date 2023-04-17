@@ -55,4 +55,4 @@ The app will generate a .docx document containing balanced tickets. Theoretical 
 
 ## Preview
 
-<img width="400" alt="app_img_1" src="images/app_img_1.png?raw=true">
+<img width="400" alt="app_img_2" src="images/app_img_2.png?raw=true">

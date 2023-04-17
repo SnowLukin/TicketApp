@@ -1,17 +1,23 @@
 
 QLabel {
     font-weight: bold;
-    color: #e0e0e0;
+    color: gray;
+}
+
+QCheckBox {
+    font-weight: bold;
+    color: gray;
 }
 
 QWidget {
-    background-color: #313131;
+    background-color: #151517;
 }
 
 #app_title {
     font-size: 27px;
     color: #e0e0e0;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    font-weight: bold;
 }
 
 #select_button {
@@ -19,6 +25,7 @@ QWidget {
     color: #0a83ff;
     border: none;
 }
+
 #select_button:pressed {
     color: #1070cb;
 }
@@ -30,6 +37,15 @@ QWidget {
     border: none;
     border-radius: 5;
 }
+
 #generate_button:pressed {
     background-color: #1070cb;
+}
+
+#dev_label {
+    color: gray;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 20px;
+    padding-left: 100px;
 }

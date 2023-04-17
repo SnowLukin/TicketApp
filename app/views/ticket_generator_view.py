@@ -12,7 +12,7 @@ class TicketGeneratorView(QWidget):
         self.viewmodel = viewmodel
 
         # Create widgets
-        self.title_label = QLabel('TaskFusion Generator', self)
+        self.title_label = QLabel('TicketFusion', self)
         self.title_label.setObjectName('app_title')
 
         self.select_theory_label = QLabel('Theory File:', self)
@@ -41,10 +41,12 @@ class TicketGeneratorView(QWidget):
         self.practice_count_input.setRange(0, 10)
 
         self.include_none_checkbox = QCheckBox('Include tasks with no complexity', self)
-        self.include_none_checkbox.setStyleSheet('font-weight: bold; color: #e0e0e0;')
         self.generate_tickets_button = QPushButton('Generate Exam Tickets', self)
         self.generate_tickets_button.setFixedSize(180, 45)
         self.generate_tickets_button.setObjectName('generate_button')
+
+        self.dev_label = QLabel('Developed by Snow Lukin', self)
+        self.dev_label.setObjectName('dev_label')
 
         # Create layouts
         self.layout = QVBoxLayout()
@@ -88,11 +90,14 @@ class TicketGeneratorView(QWidget):
         self.layout.addWidget(self.generate_tickets_button)
         self.layout.setAlignment(self.generate_tickets_button, Qt.AlignmentFlag.AlignCenter)
 
+        self.layout.addWidget(self.dev_label)
+        self.layout.setAlignment(self.dev_label, Qt.AlignmentFlag.AlignTrailing)
+
         self.layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Set the layout for the widget
         self.setLayout(self.layout)
-        self.setFixedSize(416, 425)
+        self.setFixedSize(416, 430)
         self.load_stylesheet()
 
         # Connect signals to slots
