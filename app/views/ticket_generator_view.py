@@ -1,18 +1,18 @@
+import os
 from PyQt6.QtCore import Qt, QFile, QTextStream, QSize
-from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, \
     QCheckBox, QFileDialog, QSpinBox
-
-
 from app.viewmodels.ticket_generator_viewmodel import TicketGeneratorViewModel
 
 
 class TicketGeneratorView(QWidget):
-    def __init__(self, viewmodel: TicketGeneratorViewModel):
+    def __init__(self, viewmodel: TicketGeneratorViewModel, root_path: str):
         super().__init__()
 
         # Params
         self.viewmodel = viewmodel
+        self.root_path = root_path
         self.current_lang = 'eng'
 
         # Create widgets
@@ -53,7 +53,8 @@ class TicketGeneratorView(QWidget):
         self.dev_label.setObjectName('dev_label')
 
         self.lang_button = QPushButton('', self)
-        self.lang_button.setIcon(QIcon('app/assets/english_flag.png'))
+        self.lang_button.setIcon(QIcon(os.path.join(self.root_path, 'assets/english_flag.png')))
+        # self.lang_button.setIcon(QIcon('app/assets/english_flag.png'))
         self.lang_button.setObjectName('lang_button')
         self.lang_button.setIconSize(QSize(25, 25))
 
@@ -165,7 +166,8 @@ class TicketGeneratorView(QWidget):
             self.viewmodel.generate_tickets(folder_path)
 
     def load_stylesheet(self):
-        style_file = QFile("app/views/ticket_generator_view_styles.qss")
+        style_file_path = os.path.join(self.root_path, 'assets/ticket_generator_view_styles.qss')
+        style_file = QFile(style_file_path)
         style_file.open(QFile.OpenModeFlag.ReadOnly | QFile.OpenModeFlag.Text)
         stream = QTextStream(style_file)
         stylesheet = stream.readAll()
@@ -174,7 +176,8 @@ class TicketGeneratorView(QWidget):
     def switch_language(self):  # Toggle between English and Russian
         if self.current_lang == 'eng':
             self.current_lang = 'ru'
-            self.lang_button.setIcon(QIcon('app/assets/russian_flag.png'))
+            self.lang_button.setIcon(QIcon(os.path.join(self.root_path, 'assets/russian_flag.png')))
+            # self.lang_button.setIcon(QIcon('app/assets/russian_flag.png'))
             self.select_theory_label.setText('Файл теории:')
             if 'Choose File' in self.select_theory_button.text():
                 self.select_theory_button.setText('Выбрать файл')
@@ -188,7 +191,8 @@ class TicketGeneratorView(QWidget):
             self.generate_tickets_button.setText('Сгенерировать билеты')
         else:
             self.current_lang = 'eng'
-            self.lang_button.setIcon(QIcon('app/assets/english_flag.png'))
+            self.lang_button.setIcon(QIcon(os.path.join(self.root_path, 'assets/english_flag.png')))
+            # self.lang_button.setIcon(QIcon('app/assets/english_flag.png'))
             self.select_theory_label.setText('Theory File:')
             if 'Выбрать файл' in self.select_theory_button.text():
                 self.select_theory_button.setText('Choose File')
