@@ -12,7 +12,7 @@ class TicketGeneratorView(QWidget):
         self.viewmodel = viewmodel
 
         # Create widgets
-        self.title_label = QLabel('TaskFusion Generator', self)
+        self.title_label = QLabel('TicketFusion', self)
         self.title_label.setObjectName('app_title')
 
         self.select_theory_label = QLabel('Theory File:', self)
@@ -52,7 +52,7 @@ class TicketGeneratorView(QWidget):
         self.layout = QVBoxLayout()
         self.layout.setSpacing(22)
         self.layout.addWidget(self.title_label)
-        self.layout.setAlignment(self.title_label, Qt.AlignmentFlag.AlignLeft)
+        self.layout.setAlignment(self.title_label, Qt.AlignmentFlag.AlignCenter)
 
         self.theory_layout = QHBoxLayout()
         self.theory_layout.addWidget(self.select_theory_label)
