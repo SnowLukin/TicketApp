@@ -9,6 +9,10 @@ QCheckBox {
     color: gray;
 }
 
+QSpinBox {
+    color: #e0e0e0;
+}
+
 QWidget {
     background-color: #151517;
 }
