@@ -11,7 +11,7 @@ def generate_docx(file_path: str, tickets: list[Ticket]):
         p = document.add_paragraph()
         break_run = p.add_run()
         break_run.add_break()
-        r = p.add_run(ticket.ticket_name)
+        r = p.add_run(ticket.ticket_name + str(ticket.ticket_id + 1))
         font = r.font
         font.name = 'Times New Roman'
         font.size = Pt(15)

@@ -6,7 +6,7 @@ class Ticket:
         self.ticket_id = ticket_id
         self.theory = sorted(theory)
         self.practice = sorted(practice)
-        self.ticket_name = 'Вопросы'
+        self.ticket_name = 'Билет '
 
     def __repr__(self):
         return f'Ticket: {self.ticket_id}'
