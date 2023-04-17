@@ -17,5 +17,4 @@ class Task:
         return f'{self.task_type.value}, Complexity: {self.complexity}, {self.description}'
 
     def __lt__(self, other):
-        return self.complexity < other.complexity or \
-            (self.complexity == other.complexity and self.task_id < other.task_id)
+        return self.task_id < other.task_id

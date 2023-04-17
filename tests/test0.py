@@ -24,4 +24,4 @@ for i, ticket in enumerate(tickets, 1):
     print(' Theoretical complexity: ', ticket.theory_complexity())
     print(' Practical complexity: ', ticket.practice_complexity())
 
-# generate_docx('test_file.docx', tickets)
+generate_docx('test_file.docx', tickets)
