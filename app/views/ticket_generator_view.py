@@ -41,7 +41,6 @@ class TicketGeneratorView(QWidget):
         self.practice_count_input.setRange(0, 10)
 
         self.include_none_checkbox = QCheckBox('Include tasks with no complexity', self)
-        self.include_none_checkbox.setStyleSheet('font-weight: bold; color: #e0e0e0;')
         self.generate_tickets_button = QPushButton('Generate Exam Tickets', self)
         self.generate_tickets_button.setFixedSize(180, 45)
         self.generate_tickets_button.setObjectName('generate_button')
@@ -53,7 +52,7 @@ class TicketGeneratorView(QWidget):
         self.layout = QVBoxLayout()
         self.layout.setSpacing(22)
         self.layout.addWidget(self.title_label)
-        self.layout.setAlignment(self.title_label, Qt.AlignmentFlag.AlignCenter)
+        self.layout.setAlignment(self.title_label, Qt.AlignmentFlag.AlignLeft)
 
         self.theory_layout = QHBoxLayout()
         self.theory_layout.addWidget(self.select_theory_label)
@@ -98,7 +97,7 @@ class TicketGeneratorView(QWidget):
 
         # Set the layout for the widget
         self.setLayout(self.layout)
-        self.setFixedSize(416, 425)
+        self.setFixedSize(416, 430)
         self.load_stylesheet()
 
         # Connect signals to slots
