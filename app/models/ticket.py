@@ -4,8 +4,8 @@ from app.models.task import Task
 class Ticket:
     def __init__(self, ticket_id: int, theory: list[Task], practice: list[Task]):
         self.ticket_id = ticket_id
-        self.theory = theory
-        self.practice = practice
+        self.theory = sorted(theory)
+        self.practice = sorted(practice)
         self.ticket_name = 'Вопросы'
 
     def __repr__(self):

@@ -9,6 +9,8 @@ def generate_docx(file_path: str, tickets: list[Ticket]):
 
     for ticket in tickets:
         p = document.add_paragraph()
+        break_run = p.add_run()
+        break_run.add_break()
         r = p.add_run(ticket.ticket_name)
         font = r.font
         font.name = 'Times New Roman'
