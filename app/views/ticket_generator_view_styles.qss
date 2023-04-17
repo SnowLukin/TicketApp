@@ -46,6 +46,8 @@ QWidget {
     color: gray;
     font-size: 10px;
     font-weight: normal;
-    padding-top: 20px;
-    padding-left: 100px;
+}
+
+#lang_button {
+    border: none;
 }
