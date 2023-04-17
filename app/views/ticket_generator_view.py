@@ -46,6 +46,9 @@ class TicketGeneratorView(QWidget):
         self.generate_tickets_button.setFixedSize(180, 45)
         self.generate_tickets_button.setObjectName('generate_button')
 
+        self.dev_label = QLabel('Developed by Snow Lukin', self)
+        self.dev_label.setObjectName('dev_label')
+
         # Create layouts
         self.layout = QVBoxLayout()
         self.layout.setSpacing(22)
@@ -87,6 +90,9 @@ class TicketGeneratorView(QWidget):
 
         self.layout.addWidget(self.generate_tickets_button)
         self.layout.setAlignment(self.generate_tickets_button, Qt.AlignmentFlag.AlignCenter)
+
+        self.layout.addWidget(self.dev_label)
+        self.layout.setAlignment(self.dev_label, Qt.AlignmentFlag.AlignTrailing)
 
         self.layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 

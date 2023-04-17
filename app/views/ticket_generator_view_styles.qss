@@ -19,6 +19,7 @@ QWidget {
     color: #0a83ff;
     border: none;
 }
+
 #select_button:pressed {
     color: #1070cb;
 }
@@ -30,6 +31,15 @@ QWidget {
     border: none;
     border-radius: 5;
 }
+
 #generate_button:pressed {
     background-color: #1070cb;
+}
+
+#dev_label {
+    color: gray;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 20px;
+    padding-left: 100px;
 }
