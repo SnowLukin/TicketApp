@@ -6,6 +6,12 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Ignore build artifacts
+build/
+*.o
+*.exe
+dist/
+*.spec
 # Ignore user-specific files
 xcuserdata/
 *.xcuserstate
